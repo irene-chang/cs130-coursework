@@ -1,0 +1,187 @@
+body {
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    color: #fff;
+}
+a, a:hover, a:visited, a:active {
+    color: #fff;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/**********/
+/* Layout */
+/**********/
+aside, footer, header, nav, section, article {
+    display: flex;
+    flex-direction: column;
+}
+body {
+    overflow: hidden;
+    margin: 0px;
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: calc(100vh - 100px) 100px;
+    grid-template-areas:
+       "left main"
+       "bottom bottom";
+    height: 100vh;
+}
+aside {
+    background-color: #000;
+    grid-area: left;
+    padding-left: 25px;
+}
+aside > a {
+  margin: 10px;
+  padding: 10px;
+  font-weight: 300;
+}
+aside i {
+  margin-right: 10px;
+}
+header {
+    background: #111;
+    position: fixed;
+    width: calc(100vw - 250px);
+    height: 100px;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+header > a {
+  margin: 30px;
+}
+#upgrade {
+  padding: 10px 50px;
+  border-radius: 20px;
+  border: solid 1px white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+#profile {
+  padding: 10px 50px;
+  border-radius: 20px;
+  background-color: #2f2f2f;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+main {
+    background: #111;
+    grid-area: main;
+    min-height: calc(350px);
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    z-index: 3000;
+}
+nav {
+    margin-top: 100px;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+nav > a {
+  margin: 40px;
+  padding-bottom: 5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+footer {
+    background: #222;
+    grid-area: bottom;
+}
+.artist-card img {
+  width: 100%;
+  background-size: cover;
+  height: 250px;
+  border-radius: 50%;
+}
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.artist-card {
+  width: 20%;
+}
+.artist-card > div {
+  margin: 10px;
+  background-color: #2f2f2f;
+  border-radius: 5px;
+  padding: 20px;
+}
+.artist-card:hover .play-button {
+  display: inline;
+}
+nav a:hover {
+  border-bottom: solid 3px #64E643;
+}
+aside a:hover {
+  border-left: solid 3px #64E643;
+}
+#upgrade:hover {
+  background-color: #b3b3b3;
+}
+#profile:hover {
+  opacity: 0.8;
+  background-color: #b3b3b3;
+}
+aside .selected {
+  border-left: solid 3px #64E643;
+}
+nav .selected {
+  border-bottom: solid 3px #64E643;
+}
+.play-button {
+  padding: 14px;
+  margin-bottom: 20px;
+  margin-right: 5px;
+  border-radius: 80%;
+  background-color: #64E643;
+  float: right;
+  display: none;
+}
+@media screen and (max-width: 1400px) {
+  .artist-card {
+    width: 33.3%
+  }
+}
+@media screen and (max-width: 800px) {
+  .artist-card {
+    width: 50%
+  }
+  .artist-card img {
+    height: 350px;
+  }
+  body {
+      grid-template-columns: auto;
+      grid-template-areas:
+         "main"
+         "bottom";
+  }
+  aside {
+    display: none;
+  }
+  header {
+      width: 100vw;
+  }
+}
+/***************************/
+/* Accessories & Florishes */
+/***************************/
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 4px solid transparent;
+    border-radius: 16px;
+    background-clip: padding-box;
+    min-height: 30px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: hsla(0,0%,100%,.3);
+}
