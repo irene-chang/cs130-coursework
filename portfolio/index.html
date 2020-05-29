@@ -8,62 +8,131 @@
   </head>
   <body>
     <main>
-      <header>
-        <a href="#">About Me</a>
-        <a href="#">Projects</a>
+      <header class="headercontainer">
+        <nav role="navigation">
+          <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+              <a href="index.html"><li>Home</li></a>
+              <a href="#"><li>About</li></a>
+              <a href="#"><li>Work</li></a>
+            </ul>
+          </div>
+        </nav>
+        <div id="name">
+          <a href="index.html">Irene Chang</p>
+        </div>
+        <div id="button">
+          <a href="#">About</a>
+          <a href="#">Projects</a>
+        </div>
+        <!-- hamburger menu -->
       </header>
-      <h1>Irene Chang</h1>
-      <h2>Style Guide</h2>
-      <h3>Fonts</h3>
-        <p>Inter</p>
-        <p style="font-family:Martel";>Martel</p>
-        <section class="swatches group">
-        <h3 class="section-heading">Colors</h3>
-          <ul class="swatchgrid colors">
-            <li class="color-swatch-1 swatch-1-5"></li>
-            <li class="color-swatch-2 swatch-1-5"></li>
-            <li class="color-swatch-3 swatch-1-5"></li>
-            <li class="color-swatch-4 swatch-1-5"></li>
-            <li class="color-swatch-5 swatch-1-5"></li>
-          </ul>
-      </section>
-      <!-- <h2 class="ml1">
-  <span class="text-wrapper">
-    <span class="line line1"></span>
-    <span class="letters">HI THERE!</span>
-    <span class="line line2"></span>
-  </span>
-</h2> -->
+          <h2 class="ml1">
+              <span class="text-wrapper">
+                  <span class="line line1"></span>
+                  <span class="letters">WELCOME!</span>
+                  <span class="line line2"></span>
+              </span>
+          </h2>
+          <!-- <h1 class="ml2">Sunny mornings</h1> -->
+        <section class="welcome">
+            <p>I'm a multimedia journalist and storyteller.</p>
+            <p>Hover over the boxes to learn more about me!</p>
+        </section>
+        <section class="grid">
+          <section class="cards">
+              <section class="card">
+                <div style="background-color: #d1e1e0";>
+                  <span class="content">I study journalism and psychology at Northwestern University. I will graduate in fall 2020 and will continue my education at the Medill School of Journalism's Master's program in Investigative reporting. Go 'cats!
+                </div>
+              </section>
+              <section class="card">
+                <div style="background-color: #f1dbed";>
+                  <div class="content">I'm from the San Francisco Bay Area!</div>
+                </div>
+              </section>
+              <section class="card">
+                <div style="background-color: #d1e1e0";>
+                  <span class="content">Law school hopeful (LSAT score permitting).
+                </div>
+              </section>
+              <section class="card">
+                <div style="background-color: #f1dbed";>
+                <span class="content">As a Taiwanese-American, I can speak English and Mandarin Chinese fluently. I also have an elementary grasp of French.
+              </div>
+              </section>
+              <section class="card">
+                <div style="background-color: #d1e1e0";>
+                <span class="content">I'm currently learning about web development and design.
+              </div>
+              </section>
+              <section class="card">
+                <div style="background-color: #f1dbed";>
+                <span class="content">I'm trying to learn how to cook homemade Chinese/Taiwanese cuisine (keyword: trying).
+              </div>
+              </section>
+          </section>
+        </section>
 
-<!-- <script>
-var textWrapper = document.querySelector('.ml1 .letters');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+<!-- Moving letters js -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script>
 
-anime.timeline({loop: true})
-  .add({
-    targets: '.ml1 .letter',
-    scale: [0.3,1],
-    opacity: [0,1],
-    translateZ: 0,
-    easing: "easeOutExpo",
-    duration: 600,
-    delay: (el, i) => 70 * (i+1)
-  }).add({
-    targets: '.ml1 .line',
-    scaleX: [0,1],
-    opacity: [0.5,1],
-    easing: "easeOutExpo",
-    duration: 700,
-    offset: '-=875',
-    delay: (el, i, l) => 80 * (l - i)
-  }).add({
-    targets: '.ml1',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  });
-</script> -->
-<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script> -->
+//First Animation:
+    var textWrapper = document.querySelector('.ml1 .letters');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    anime.timeline({loop: true})
+      .add({
+        targets: '.ml1 .letter',
+        scale: [0.3,1],
+        opacity: [0,1],
+        translateZ: 0,
+        easing: "easeOutExpo",
+        duration: 600,
+        delay: (el, i) => 70 * (i+1)
+      }).add({
+        targets: '.ml1 .line',
+        scaleX: [0,1],
+        opacity: [0.5,1],
+        easing: "easeOutExpo",
+        duration: 700,
+        offset: '-=875',
+        delay: (el, i, l) => 80 * (l - i)
+      }).add({
+        targets: '.ml1',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+      });
+
+    // Second Animation:
+    // textWrapper = document.querySelector('.ml2');
+    // textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    //
+    // anime.timeline({loop: true})
+    //   .add({
+    //     targets: '.ml2 .letter',
+    //     scale: [4,1],
+    //     opacity: [0,1],
+    //     translateZ: 0,
+    //     easing: "easeOutExpo",
+    //     duration: 950,
+    //     delay: (el, i) => 70*i
+    //   }).add({
+    //     targets: '.ml2',
+    //     opacity: 0,
+    //     duration: 1000,
+    //     easing: "easeOutExpo",
+    //     delay: 1000
+    //   });
+
+
+
+    </script>
   </body>
 </html>
