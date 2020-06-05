@@ -35,11 +35,30 @@ h3 {
   padding: 20px;
   color: #24496d;
 }
+.cardtitle h4 {
+  font-family: "Inter";
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 30px;
+  text-align: center;
+  color: #24496d;
+  margin: 0;
+  padding: 0;
+  top: 45%;
+  position: relative;
+  transform: translateY(-50%);
+}
+.cardtitle {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
 p {
   font-family: "Martel";
   font-weight: 200;
   font-size: 15px;
   color: #24496d;
+  padding: 5px;
 }
 body {
   display: block;
@@ -68,6 +87,7 @@ header {
   margin: 0;
   padding: 0;
 }
+
 .headercontainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -117,10 +137,7 @@ header {
   padding-left: 15px;
 }
 .welcome {
-  text-align: center;
-  justify-content: center;
-  overflow: none;
-  padding-bottom: 10px;
+  padding: 20px 0 20px 0;
 }
 .grid {
   display: grid;
@@ -147,25 +164,83 @@ header {
   padding: 20px;
   border-radius: 4px;
   height: 400px;
-  text-align: left;
+  text-align: center;
 }
 .content {
-  font-weight: 200;
-  text-align: left;
-  line-height: 2em;
-  padding: 20px;
+  font-weight: 600;
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  line-height: 1.5em;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
   display: inline-block;
+  display: none;
 }
-
-.content {
-  display:none;
+.cardimg {
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.cardimg > div {
+  height: 100%;
+  width: 100%;
+}
+.cardimg > div > img {
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  border-radius: 12px;
+  object-fit: cover;
+  padding: 0;
+  margin: 0;
+}
+.imgcontain {
+  width: 100%;
+  border-radius: 12px;
+  opacity: 0.5;
+  padding: 0;
+  margin: 0;
 }
 .card > div:hover .content{
   display: block;
-  z-index:10;
+  z-index:100;
+}
+.card > div:hover .cardtitle{
+  display: none;
+}
+.card > div:hover .cardimg {
+  display: block;
+  z-index: 50;
 }
 nav {
   display: none;
+}
+/* social media */
+.link{
+  margin-top: 25px;
+  padding: 1em;
+  border-radius: 4px;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 2em;
+  background: #24496d;
+  text-align: center;
+  text-decoration: none;
+  font: 0.9em 'Inter', sans-serif;
+  font-weight: 100;
+  letter-spacing: 1px;
+  color: white;
+  transition: all .2s ease;
+  align-items: center;
+}
+.link:hover {
+  background: #f1dbed;
+  color: #24496d;
 }
 
 @media screen and (max-width: 1400px) {
@@ -197,9 +272,21 @@ nav {
   #name a {
     padding-top: 20px;
   }
+  .welcomecontent {
+    display: none;
+  }
+  .welcome {
+    display: none;
+  }
 }
 @media screen and (max-width: 900px) {
   #button {
+    display: none;
+  }
+  .welcomecontent {
+    display: none;
+  }
+  .welcome {
     display: none;
   }
   nav{
