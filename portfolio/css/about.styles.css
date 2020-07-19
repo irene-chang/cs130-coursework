@@ -303,9 +303,48 @@ nav {
   .welcome {
     display: block;
   }
+  .cardimg {
+    display: block;
+    z-index:100;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  .content{
+    display: block;
+    z-index:100;
+  }
+  .cardtitle{
+    display: none;
+  }
+  .welcomecontent{
+    display: none;
+  }
+  .welcomecontentmedia{
+    display: block;
+    padding: 30px;
+  }
 }
 @media screen and (max-width: 900px) {
+  .cardimg {
+    display: block;
+    z-index:100;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  .content{
+    display: block;
+    z-index:100;
+  }
+  .cardtitle{
+    display: none;
+  }
   .welcomecontent{
+    display: none;
+  }
+  .welcomecontentmedia{
+    display: block;
     padding: 30px;
   }
   #button {
