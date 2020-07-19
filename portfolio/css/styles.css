@@ -158,9 +158,6 @@ header {
 }
 
 .content {
-  display:none;
-}
-.card > div:hover .content{
   display: block;
   z-index:10;
 }
